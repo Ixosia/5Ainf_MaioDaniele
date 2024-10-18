@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pagina Iniziale</title>
+    <title>Pagina TPS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,13 +50,12 @@
 </head>
 <body>
     <header>
-        <h1>Benvenuto nella Mia Pagina Iniziale</h1>
+        <h1>Benvenuto nella Mia Pagina TPS</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">Chi Siamo</a></li>
-                <li><a href="#services">Servizi</a></li>
-                <li><a href="#contact">Contatti</a></li>
+                <li><a href="#about">Chi Sono</a></li>
+                <li><a href="#lavori">Lavori</a></li>
             </ul>
         </nav>
     </header>
@@ -67,22 +66,24 @@
     </section>
 
     <section id="about">
-        <h2>Chi Siamo</h2>
-        <p>Siamo un team di professionisti dedicati a offrire soluzioni web innovative.</p>
+        <h2>Chi Sono</h2>
+        <p>Sono uno studente dell'istituto ITIS Cannizzaro di Rho</p>
     </section>
 
     <section id="services">
         <h2>Servizi</h2>
-        <p>Offriamo servizi di sviluppo web, design grafico e consulenza IT.</p>
+        <p>Lavori svolti durante l'anno 2024/2025 </p>
+        <ul>
+          <li>Primo elemento</li>
+          <li>Secondo elemento</li>
+          <li>Terzo elemento</li>
+          <li>Quarto elemento</li>
+        </ul>
     </section>
 
-    <section id="contact">
-        <h2>Contatti</h2>
-        <p>Per ulteriori informazioni, <a href="mailto:info@tuaazienda.com">contattaci via email</a>.</p>
-    </section>
 
     <footer>
-        <p>&copy; 2024 Tua Azienda. Tutti i diritti riservati.</p>
+        <p>😍</p>
     </footer>
 </body>
 </html>
