@@ -14,55 +14,7 @@
         var xmlhttp = new XMLHttpRequest();
 
 
-        xmlhttp.open("GET", "<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elenco Nomi</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Collega il file CSS qui -->
-</head>
-<body>
-    <div id="demo"></div>
-
-
-    <script>
-        var xmlhttp = new XMLHttpRequest();
-
-
-        xmlhttp.open("GET", "https://gist.github.com/Ixosia/1d6f9aeb0033167bc2f304f7aee28201.js", true);
-        xmlhttp.send();
-
-
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
-                    var myObj = JSON.parse(this.responseText);
-                    var stampa = "";
-
-
-                    myObj.nomi.forEach(function(nomi) {
-                        stampa += "<h2>" + nomi.nome + " " + nomi.cognome + "</h2>";
-                        stampa += "<p>Età: " + nomi.età + "</p>";
-                        stampa += "<p>Indirizzo: " + nomi.indirizzo + "</p>";
-                        stampa += "<p>Città: " + nomi.città + "</p>";
-                        stampa += "<p>Telefono: " + nomi.telefono.map(t => t.numero).join(", ") + "</p>";
-                        stampa += "<p>Sport: " + nomi.sport.join(", ") + "</p><hr>";
-                    });
-
-
-                    document.getElementById("demo").innerHTML = stampa;
-                } else {
-                    console.error("Errore nella richiesta: " + this.status);
-                }
-            }
-        };
-    </script>
-</body>
-</html>
-
-
-", true);
+        xmlhttp.open("GET", "http://127.0.0.1/5Ainf/sium.json", true);
         xmlhttp.send();
 
 
