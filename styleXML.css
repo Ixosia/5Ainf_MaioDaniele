@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Stile per il contenitore principale */
+#demo {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per i titoli */
+h2 {
+    color: #007BFF;
+}
+
+/* Stile per i paragrafi */
+p {
+    line-height: 1.6;
+}
+
+/* Separatore tra le sezioni */
+hr {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+}
