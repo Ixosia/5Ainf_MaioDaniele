@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="styles.css"> <!-- Collega il file CSS qui -->
 </head>
 <body>
-    <div id="demo"></div>
-
+    <table id="demo" border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Indirizzo</th>
+                <th>Città</th>
+                <th>Telefono</th>
+                <th>Sport</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
     <script>
         var xmlhttp = new XMLHttpRequest();
 
-
         xmlhttp.open("GET", "https://ixosia.github.io/Anagrafica/sium.json", true);
         xmlhttp.send();
-
 
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4) {
@@ -24,18 +34,21 @@
                     var myObj = JSON.parse(this.responseText);
                     var stampa = "";
 
-
                     myObj.nomi.forEach(function(nomi) {
-                        stampa += "<h2>" + nomi.nome + " " + nomi.cognome + "</h2>";
-                        stampa += "<p>Età: " + nomi.età + "</p>";
-                        stampa += "<p>Indirizzo: " + nomi.indirizzo + "</p>";
-                        stampa += "<p>Città: " + nomi.città + "</p>";
-                        stampa += "<p>Telefono: " + nomi.telefono.map(t => t.numero).join(", ") + "</p>";
-                        stampa += "<p>Sport: " + nomi.sport.join(", ") + "</p><hr>";
+                        var telefoni = nomi.telefono.map(t => t.numero).join(", ");
+                        var sport = nomi.sport.join(", ");
+                        stampa += "<tr>";
+                        stampa += "<td>" + nomi.nome + "</td>";
+                        stampa += "<td>" + nomi.cognome + "</td>";
+                        stampa += "<td>" + nomi.età + "</td>";
+                        stampa += "<td>" + nomi.indirizzo + "</td>";
+                        stampa += "<td>" + nomi.città + "</td>";
+                        stampa += "<td>" + telefoni + "</td>";
+                        stampa += "<td>" + sport + "</td>";
+                        stampa += "</tr>";
                     });
 
-
-                    document.getElementById("demo").innerHTML = stampa;
+                    document.querySelector("#demo tbody").innerHTML = stampa;
                 } else {
                     console.error("Errore nella richiesta: " + this.status);
                 }
@@ -44,5 +57,3 @@
     </script>
 </body>
 </html>
-
-
