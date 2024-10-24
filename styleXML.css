@@ -1,33 +1,55 @@
+/* Stile generale del body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 20px;
 }
 
-/* Stile per il contenitore principale */
-#demo {
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Stile della tabella */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Stile dell'intestazione della tabella */
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Stile delle celle della tabella */
+td {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+
+/* Stile per righe alternate */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Stile al passaggio del mouse sulle righe */
+tr:hover {
+    background-color: #d1e7dd;
 }
 
 /* Stile per i titoli */
-h2 {
-    color: #007BFF;
+h1 {
+    text-align: center;
+    color: #333;
 }
 
-/* Stile per i paragrafi */
-p {
-    line-height: 1.6;
+/* Stile per i link (se presenti) */
+a {
+    color: #4CAF50;
+    text-decoration: none;
 }
 
-/* Separatore tra le sezioni */
-hr {
-    margin: 20px 0;
-    border: 1px solid #ddd;
+a:hover {
+    text-decoration: underline;
 }
