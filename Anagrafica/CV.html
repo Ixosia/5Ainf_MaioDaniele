@@ -14,6 +14,10 @@
         }
     </style>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let indiceCV = localStorage.getItem("Indice");
+            if (indiceCV !== null) caricaDatiCV(indiceCV);
+        });
         function caricaDatiCV(indice) {
             var file = new XMLHttpRequest();
             file.open("GET", "https://raw.githubusercontent.com/Ixosia/5Ainf_MaioDaniele/refs/heads/main/Anagrafica/curriculum.json", true);
@@ -48,10 +52,7 @@
             });
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            let indiceCV = localStorage.getItem("Indice");
-            if (indiceCV !== null) caricaDatiCV(indiceCV);
-        });
+        
     </script>
 </head>
 <body>
