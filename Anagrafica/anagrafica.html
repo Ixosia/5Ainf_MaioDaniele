@@ -35,11 +35,12 @@
                 if (this.readyState == 4 && this.status == 200) {
                     var jsonDoc = JSON.parse(file.responseText);
                     mostraInfo(jsonDoc);
+                    
+                    // Mostra la tabella solo dopo aver caricato i dati
+                    document.getElementById("formIngr").style.visibility = "hidden";
+                    document.getElementById("risForm").style.visibility = "visible";
                 }
             };
-            document.getElementById("formIngr").style.width = "0px";
-            document.getElementById("formIngr").style.visibility = "hidden";
-            document.getElementById("risForm").style.visibility = "visible";
         }
 
         function mostraInfo(ogg) {
@@ -101,10 +102,6 @@
             }
             document.getElementById("stringaJSON").appendChild(tabella);
         }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            caricaDati();
-        });
     </script>
 </head>
 <body>
