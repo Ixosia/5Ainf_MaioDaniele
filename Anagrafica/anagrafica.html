@@ -27,11 +27,6 @@
         }
     </style>
     <script>
-        const express = require('express');
-        const cors = require('cors');
-        const app = express();
-        
-        app.use(cors());
         function caricaDati() {
             var file = new XMLHttpRequest();
             file.open("GET", "https://github.com/Ixosia/5Ainf_MaioDaniele/blob/main/Anagrafica/anagrafica.json", true);
