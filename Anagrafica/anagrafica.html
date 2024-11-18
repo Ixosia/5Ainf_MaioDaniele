@@ -10,11 +10,8 @@
             height: 50px;
             cursor: pointer;
         }
-        #formIngr, #risForm {
-            transition: all 0.3s ease;
-        }
         #risForm {
-            visibility: hidden;
+            margin-top: 20px;
         }
         table {
             width: 100%;
@@ -27,8 +24,8 @@
         }
     </style>
     <script>
-            var file = new XMLHttpRequest();
-            file.open("GET", "https://raw.githubusercontent.com/Ixosia/Anagrafica/refs/heads/main/sium.json", true);
+        var file = new XMLHttpRequest();
+            file.open("GET", "https://raw.githubusercontent.com/Ixosia/5Ainf_MaioDaniele/refs/heads/main/Anagrafica/anagrafica.json", true);
             file.send();
             file.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -40,11 +37,11 @@
                 }
             };
         
-
         function mostraInfo(File) {
             const tabella = document.createElement("table");
-            const colonnaIndici = ["Immagine", "Nome", "Cognome", "Età", "Indirizzo", "Città", "Telefono 1", "Telefono 2", "Sport 1", "Sport 2"];
+            const colonnaIndici = ["Immagine", "Nome", "Cognome", "Età", "Indirizzo", "Città", "Telefono 1", "Telefono 2"];
             const colonnaTitoli = document.createElement("tr");
+
 
             colonnaIndici.forEach(indice => {
                 const th = document.createElement("th");
@@ -53,11 +50,11 @@
             });
             tabella.appendChild(colonnaTitoli);
 
-
-            jsonDoc.nomi.forEach((persona, i) => {
+         
+            File.nomi.forEach((persona, i) => {
                 const riga = document.createElement("tr");
 
-
+              
                 const cellaImg = document.createElement("td");
                 const img = document.createElement("img");
                 img.src = persona.thumb;
@@ -65,21 +62,20 @@
                 img.classList.add("immagineProfilo");
                 img.addEventListener("click", () => {
                     localStorage.setItem("Indice", i);
-                    window.location.href = "CV.html";
+                    window.location.href = CV.html; 
                 });
                 cellaImg.appendChild(img);
 
-
+              
                 const cellaNome = creaCella(persona.nome);
                 const cellaCognome = creaCella(persona.cognome);
                 const cellaEta = creaCella(persona.età);
                 const cellaIndirizzo = creaCella(persona.indirizzo);
                 const cellaCitta = creaCella(persona.città);
-                const cellaTelefono1 = creaCella(persona.telefono[0]?.numero || "");
-                const cellaTelefono2 = creaCella(persona.telefono[1]?.numero || "");
-                const cellaSport1 = creaCella(persona.sport?.[0] || "Non specificato");
-                const cellaSport2 = creaCella(persona.sport?.[1] || "Non specificato");
+                const cellaTelefono1 = creaCella(persona.telefono[0]?.numero || "Non disponibile");
+                const cellaTelefono2 = creaCella(persona.telefono[1]?.numero || "Non disponibile");
 
+  
                 riga.appendChild(cellaImg);
                 riga.appendChild(cellaNome);
                 riga.appendChild(cellaCognome);
@@ -88,15 +84,16 @@
                 riga.appendChild(cellaCitta);
                 riga.appendChild(cellaTelefono1);
                 riga.appendChild(cellaTelefono2);
-                riga.appendChild(cellaSport1);
-                riga.appendChild(cellaSport2);
 
+      
                 tabella.appendChild(riga);
             });
 
+   
             document.getElementById("stringaJSON").appendChild(tabella);
         }
 
+      
         function creaCella(contenuto) {
             const cella = document.createElement("td");
             cella.textContent = contenuto;
