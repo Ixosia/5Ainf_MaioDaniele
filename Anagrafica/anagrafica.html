@@ -27,7 +27,6 @@
         }
     </style>
     <script>
-        function caricaDati() {
             var file = new XMLHttpRequest();
             file.open("GET", "https://raw.githubusercontent.com/Ixosia/5Ainf_MaioDaniele/refs/heads/main/Anagrafica/anagrafica.json", true);
             file.send();
@@ -40,7 +39,7 @@
                     document.getElementById("risForm").style.visibility = "visible";
                 }
             };
-        }
+        
 
         function mostraInfo(ogg) {
             var tabella = document.createElement("table");
@@ -104,9 +103,6 @@
     </script>
 </head>
 <body>
-    <div id="formIngr">
-        <button onclick="caricaDati()">Carica Dati</button>
-    </div>
     <div id="risForm">
         <div id="stringaJSON"></div>
     </div>
