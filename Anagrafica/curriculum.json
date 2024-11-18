@@ -4,20 +4,20 @@
     { "Posizione": "Sviluppatore Software" },
     { "Esperienza": "5 anni di esperienza in gestione progetti." },
     { "Descrizione": "Specializzato nella gestione di team e nella pianificazione strategica." },
-    { "Immagine": "https://example.com/mario_rossi.jpg" }
+    { "Immagine": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXZ6Vw-Br-RRvMstTlTqbeGXw4PNepXRrTzg&s" }
   ],
   "Persona2": [
     { "Nominativo": "Luigi Verdi" },
     { "Posizione": "Project Manager" },
     { "Esperienza": "3 anni di esperienza in sviluppo front-end e back-end." },
     { "Descrizione": "Esperto in linguaggi di programmazione come JavaScript e Python." },
-    { "Immagine": "https://example.com/luigi_verdi.jpg" }
+    { "Immagine": "https://pbs.twimg.com/profile_images/68512960/MP6_Luigi_400x400.jpg" }
   ],
   "Persona3": [
     { "Nominativo": "Anna Bianchi" },
     { "Posizione": "Designer" },
     { "Esperienza": "4 anni di esperienza in design grafico e UX." },
     { "Descrizione": "Esperta in Adobe Illustrator, Photoshop e UX/UI design." },
-    { "Immagine": "https://example.com/anna_bianchi.jpg" }
+    { "Immagine": "https://magicdreams.store/cdn/shop/files/action-figure-anna-18-cm-frozen-magic-dreams-store.jpg?v=1707292069" }
   ]
 }
