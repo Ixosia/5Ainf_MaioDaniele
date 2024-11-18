@@ -11,7 +11,7 @@
         { "numero": 3983657832 }
       ],
       "sport": ["Calcio", "Basket"],
-      "thumb": "thumbs/Riccardo.jpg",
+      "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXZ6Vw-Br-RRvMstTlTqbeGXw4PNepXRrTzg&s",
     },
     {
       "nome": "Luigi",
@@ -24,7 +24,7 @@
         { "numero": 3980373032 }
       ],
         "sport": ["Nuoto"],
-      "thumb": "thumbs/Luca.jpg",
+      "thumb": "https://pbs.twimg.com/profile_images/68512960/MP6_Luigi_400x400.jpg",
     },
     {
       "nome": "Anna",
@@ -37,7 +37,7 @@
         { "numero": 3054893320 }
       ],
         "sport": ["GinnasticaArtistica","Pallavolo"],
-      "thumb": "thumbs/Anna.jpg",
+      "thumb": "https://magicdreams.store/cdn/shop/files/action-figure-anna-18-cm-frozen-magic-dreams-store.jpg?v=1707292069",
     }
   ]
 }
