@@ -1,8 +1,8 @@
 {
   "nomi": [
     {
-      "nome": "Riccardo",
-      "cognome": "Bianchi",
+      "nome": "Mario",
+      "cognome": "Rossi",
       "età": 22,
       "indirizzo": "via colera 3",
       "città": "Garbagnate Milanese",
@@ -10,11 +10,12 @@
         { "numero": 3125673456 },
         { "numero": 3983657832 }
       ],
+      "sport": ["Calcio", "Basket"],
       "thumb": "thumbs/Riccardo.jpg",
     },
     {
-      "nome": "Luca",
-      "cognome": "Rossi",
+      "nome": "Luigi",
+      "cognome": "Verdi",
       "età": 14,
       "indirizzo": "via purcesi 9",
       "città": "Novate Milanese",
@@ -22,11 +23,12 @@
         { "numero": 3146556783 },
         { "numero": 3980373032 }
       ],
+        "sport": ["Nuoto"],
       "thumb": "thumbs/Luca.jpg",
     },
     {
       "nome": "Anna",
-      "cognome": "Citti",
+      "cognome": "Bianchi",
       "età": 16,
       "indirizzo": "via dei fanti 98",
       "città": "Pogliano Milanese",
@@ -34,6 +36,7 @@
         { "numero": 3169485054 },
         { "numero": 3054893320 }
       ],
+        "sport": ["GinnasticaArtistica","Pallavolo"],
       "thumb": "thumbs/Anna.jpg",
     }
   ]
