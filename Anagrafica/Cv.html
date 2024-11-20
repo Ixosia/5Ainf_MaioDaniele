@@ -41,7 +41,6 @@
             intestazione.innerHTML = '';
             contenutoCV.innerHTML = '';
 
-            // Sezione Dati Personali
             let immagine = document.createElement("img");
             immagine.src = ogg.DatiPersonali.Immagine || "";
             intestazione.appendChild(immagine);
@@ -58,7 +57,6 @@
                 "<strong>Email:</strong> " + (ogg.DatiPersonali.Email || "Non disponibile");
             intestazione.appendChild(contatti);
 
-            // Sezione Formazione
             if (ogg.Formazione && ogg.Formazione.length > 0) {
                 let sezioneFormazione = creaSezione("Istruzione e formazione", ogg.Formazione);
                 contenutoCV.appendChild(sezioneFormazione);
@@ -67,7 +65,6 @@
                 contenutoCV.appendChild(sezioneFormazione);
             }
 
-            // Sezione Esperienze
             if (ogg.Esperienze && ogg.Esperienze.length > 0) {
                 let sezioneEsperienze = creaSezione("Esperienze lavorative", ogg.Esperienze);
                 contenutoCV.appendChild(sezioneEsperienze);
@@ -76,7 +73,6 @@
                 contenutoCV.appendChild(sezioneEsperienze);
             }
 
-            // Sezione Competenze
             if (ogg.Competenze && ogg.Competenze.length > 0) {
                 let sezioneCompetenze = creaSezione("Competenze", ogg.Competenze);
                 contenutoCV.appendChild(sezioneCompetenze);
