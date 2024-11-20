@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elenco Nomi</title>
-    <link rel="stylesheet" href="styleXML.css"> <!-- Collega il file CSS qui -->
+    <link rel="stylesheet" href="styleXML.css">
 </head>
 <body>
     <table id="demo" border="1">
@@ -28,7 +28,7 @@
     <script>
         var xmlhttp = new XMLHttpRequest();
 
-        xmlhttp.open("GET", "https://ixosia.github.io/Anagrafica/sium.json", true);
+        xmlhttp.open("GET", "https://raw.githubusercontent.com/Ixosia/Anagrafica/refs/heads/main/sium.json", true);
         xmlhttp.send();
 
         xmlhttp.onreadystatechange = function() {
