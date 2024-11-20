@@ -29,16 +29,15 @@
     </style>
     <script>
         function caricaDatiCV() {
-            
             let indice = localStorage.getItem("Indice");
             if (!indice) {
                 document.getElementById("contenutoCV").innerHTML = "<p>Nessun dato disponibile.</p>";
                 return;
             }
-
-
-            let fileJSON = "cv_${indice}.json";
-
+        
+            // Costruzione del nome del file JSON senza utilizzare la tilde
+            let fileJSON = "cv_" + indice + ".json";
+        
             var file = new XMLHttpRequest();
             file.open("GET", fileJSON, true);
             file.send();
@@ -51,6 +50,7 @@
                 }
             };
         }
+
 
         function mostraInfoCV(ogg) {
             const intestazione = document.getElementById("intestazione");
