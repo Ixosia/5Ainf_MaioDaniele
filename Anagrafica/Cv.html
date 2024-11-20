@@ -6,6 +6,10 @@
     <title>Curriculum</title>
     <link rel="stylesheet" href="styleCv.css">
 </head>
+<body>
+    <div id="intestazione"></div>
+    <div id="contenutoCV"></div>
+
     <script>
         function caricaDatiCV() {
             let indice = localStorage.getItem("Indice");
@@ -29,7 +33,6 @@
                 }
             };
         }
-
 
         function mostraInfoCV(ogg) {
             const intestazione = document.getElementById("intestazione");
@@ -55,17 +58,23 @@
             `;
             intestazione.appendChild(contatti);
 
-
-            let sezioneEsperienze = creaSezione("Esperienze lavorative", ogg.Esperienze);
-            contenutoCV.appendChild(sezioneEsperienze);
-
+            let sezionePresentazione = creaSezione("Presentazione", [ogg.Presentazione]);
+            contenutoCV.appendChild(sezionePresentazione);
 
             let sezioneFormazione = creaSezione("Istruzione e formazione", ogg.Formazione);
             contenutoCV.appendChild(sezioneFormazione);
 
-            
-            let sezioneCompetenze = creaSezione("Competenze personali", ogg.Competenze);
-            contenutoCV.appendChild(sezioneCompetenze);
+            let sezioneEsperienze = creaSezione("Esperienze lavorative", ogg.Esperienze);
+            contenutoCV.appendChild(sezioneEsperienze);
+
+            let sezioneLingue = creaSezione("Competenze linguistiche", ogg.Lingue);
+            contenutoCV.appendChild(sezioneLingue);
+
+            let sezioneCompetenzeDigitali = creaSezione("Competenze digitali", ogg.CompetenzeDigitali);
+            contenutoCV.appendChild(sezioneCompetenzeDigitali);
+
+            let sezionePatente = creaSezione("Patente di guida", [ogg.Patente]);
+            contenutoCV.appendChild(sezionePatente);
         }
 
         function creaSezione(titolo, contenuto) {
@@ -87,9 +96,5 @@
 
         document.addEventListener("DOMContentLoaded", caricaDatiCV);
     </script>
-
-<body>
-    <div id="intestazione"></div>
-    <div id="contenutoCV"></div>
 </body>
 </html>
