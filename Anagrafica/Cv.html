@@ -39,8 +39,7 @@
 
             intestazione.innerHTML = '';
             contenutoCV.innerHTML = '';
-
-            // Sezione Dati Personali
+            
             let immagine = document.createElement("img");
             immagine.src = ogg.DatiPersonali.Immagine || "";
             intestazione.appendChild(immagine);
@@ -57,15 +56,12 @@
                 "<strong>Email:</strong> " + (ogg.DatiPersonali.Email || "Non disponibile");
             intestazione.appendChild(contatti);
 
-            // Sezione Formazione
             let sezioneFormazione = creaSezione("Istruzione e formazione", ogg.Formazione);
             contenutoCV.appendChild(sezioneFormazione);
 
-            // Sezione Esperienze
             let sezioneEsperienze = creaSezione("Esperienze lavorative", ogg.Esperienze);
             contenutoCV.appendChild(sezioneEsperienze);
 
-            // Sezione Competenze
             let sezioneCompetenze = creaSezione("Competenze", ogg.Competenze);
             contenutoCV.appendChild(sezioneCompetenze);
         }
