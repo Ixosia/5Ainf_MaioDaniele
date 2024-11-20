@@ -56,9 +56,6 @@
                 "<strong>Email:</strong> " + (ogg.DatiPersonali.Email || "Non disponibile");
             intestazione.appendChild(contatti);
 
-            let sezionePresentazione = creaSezione("Presentazione", [ogg.Presentazione]);
-            contenutoCV.appendChild(sezionePresentazione);
-
             let sezioneFormazione = creaSezione("Istruzione e formazione", ogg.Formazione);
             contenutoCV.appendChild(sezioneFormazione);
 
