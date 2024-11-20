@@ -5,55 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
         #contenutoCV {
             margin-top: 20px;
         }
         img {
             width: 100px;
             height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .sezione {
+            margin-bottom: 20px;
+        }
+        .sezione h2 {
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
         }
     </style>
     <script>
-        
-        function caricaDatiCV(indice) {
+        function caricaDatiCV() {
+            
+            let indice = localStorage.getItem("Indice");
+            if (!indice) {
+                document.getElementById("contenutoCV").innerHTML = "<p>Nessun dato disponibile.</p>";
+                return;
+            }
+
+
+            let fileJSON = `cv_${indice}.json`;
+
             var file = new XMLHttpRequest();
-            file.open("GET", "https://raw.githubusercontent.com/Ixosia/5Ainf_MaioDaniele/refs/heads/main/Anagrafica/curriculum.json", true);
+            file.open("GET", fileJSON, true);
             file.send();
-            file.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var jsonDoc = JSON.parse(file.responseText);
-                    mostraInfoCV(jsonDoc, indice);
+            file.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    let jsonDoc = JSON.parse(file.responseText);
+                    mostraInfoCV(jsonDoc);
+                } else if (this.readyState === 4) {
+                    document.getElementById("contenutoCV").innerHTML = "<p>Errore nel caricamento del file.</p>";
                 }
             };
         }
 
-        function mostraInfoCV(ogg, indice) {
-            let nominativo = document.createElement("h1");
-            nominativo.appendChild(document.createTextNode(ogg.Nominativi[indice].Nominativo));
+        function mostraInfoCV(ogg) {
+            const intestazione = document.getElementById("intestazione");
+            const contenutoCV = document.getElementById("contenutoCV");
+
+            intestazione.innerHTML = '';
+            contenutoCV.innerHTML = '';
 
             let immagine = document.createElement("img");
-            immagine.src = ogg.Immagini[indice].Immagine || "";
-            document.getElementById("intestazione").appendChild(immagine);
-            document.getElementById("intestazione").appendChild(nominativo);
+            immagine.src = ogg.DatiPersonali.Immagine || "";
+            intestazione.appendChild(immagine);
 
-            let titoli = ["Posizioni", "Esperienza", "Descrizione"];
-            let contenuti = [ogg.Posizioni[indice].Posizione, ogg.Esperienze[indice].Esperienza, ogg.Descrizioni[indice].Descrizione];
-            titoli.forEach((titolo, i) => {
-                let tit = document.createElement("h2");
-                tit.appendChild(document.createTextNode(titolo));
-                document.getElementById("contenutoCV").appendChild(tit);
+            let nominativo = document.createElement("h1");
+            nominativo.textContent = `${ogg.DatiPersonali.Nome} ${ogg.DatiPersonali.Cognome}`;
+            intestazione.appendChild(nominativo);
 
-                let par = document.createElement("p");
-                par.appendChild(document.createTextNode(contenuti[i]));
-                document.getElementById("contenutoCV").appendChild(par);
-            });
+            let contatti = document.createElement("p");
+            contatti.innerHTML = `
+                <strong>Indirizzo:</strong> ${ogg.DatiPersonali.Indirizzo}<br>
+                <strong>Città:</strong> ${ogg.DatiPersonali.Città}<br>
+                <strong>Telefono:</strong> ${ogg.DatiPersonali.Telefono}<br>
+                <strong>Email:</strong> ${ogg.DatiPersonali.Email || "Non disponibile"}
+            `;
+            intestazione.appendChild(contatti);
+
+
+            let sezioneEsperienze = creaSezione("Esperienze lavorative", ogg.Esperienze);
+            contenutoCV.appendChild(sezioneEsperienze);
+
+
+            let sezioneFormazione = creaSezione("Istruzione e formazione", ogg.Formazione);
+            contenutoCV.appendChild(sezioneFormazione);
+
+            
+            let sezioneCompetenze = creaSezione("Competenze personali", ogg.Competenze);
+            contenutoCV.appendChild(sezioneCompetenze);
         }
-        document.addEventListener("DOMContentLoaded", function() {
-            let indiceCV = localStorage.getItem("Indice");
-            if (indiceCV !== null) caricaDatiCV(indiceCV);
-        });
 
-        
+        function creaSezione(titolo, contenuto) {
+            let sezione = document.createElement("div");
+            sezione.classList.add("sezione");
+
+            let titoloSezione = document.createElement("h2");
+            titoloSezione.textContent = titolo;
+            sezione.appendChild(titoloSezione);
+
+            contenuto.forEach(item => {
+                let paragrafo = document.createElement("p");
+                paragrafo.textContent = item;
+                sezione.appendChild(paragrafo);
+            });
+
+            return sezione;
+        }
+
+        document.addEventListener("DOMContentLoaded", caricaDatiCV);
     </script>
 </head>
 <body>
