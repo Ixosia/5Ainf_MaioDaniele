@@ -40,6 +40,7 @@
             intestazione.innerHTML = '';
             contenutoCV.innerHTML = '';
 
+            // Sezione Dati Personali
             let immagine = document.createElement("img");
             immagine.src = ogg.DatiPersonali.Immagine || "";
             intestazione.appendChild(immagine);
@@ -51,25 +52,22 @@
             let contatti = document.createElement("p");
             contatti.innerHTML = 
                 "<strong>Indirizzo:</strong> " + ogg.DatiPersonali.Indirizzo + "<br>" +
-                "<strong>Citta:</strong> " + ogg.DatiPersonali.Citta + "<br>" +
+                "<strong>Città:</strong> " + ogg.DatiPersonali.Città + "<br>" +
                 "<strong>Telefono:</strong> " + ogg.DatiPersonali.Telefono + "<br>" +
                 "<strong>Email:</strong> " + (ogg.DatiPersonali.Email || "Non disponibile");
             intestazione.appendChild(contatti);
 
+            // Sezione Formazione
             let sezioneFormazione = creaSezione("Istruzione e formazione", ogg.Formazione);
             contenutoCV.appendChild(sezioneFormazione);
 
+            // Sezione Esperienze
             let sezioneEsperienze = creaSezione("Esperienze lavorative", ogg.Esperienze);
             contenutoCV.appendChild(sezioneEsperienze);
 
-            let sezioneLingue = creaSezione("Competenze linguistiche", ogg.Lingue);
-            contenutoCV.appendChild(sezioneLingue);
-
-            let sezioneCompetenzeDigitali = creaSezione("Competenze digitali", ogg.CompetenzeDigitali);
-            contenutoCV.appendChild(sezioneCompetenzeDigitali);
-
-            let sezionePatente = creaSezione("Patente di guida", [ogg.Patente]);
-            contenutoCV.appendChild(sezionePatente);
+            // Sezione Competenze
+            let sezioneCompetenze = creaSezione("Competenze", ogg.Competenze);
+            contenutoCV.appendChild(sezioneCompetenze);
         }
 
         function creaSezione(titolo, contenuto) {
@@ -80,11 +78,17 @@
             titoloSezione.textContent = titolo;
             sezione.appendChild(titoloSezione);
 
-            contenuto.forEach(function(item) {
+            if (contenuto && contenuto.length > 0) {
+                contenuto.forEach(function(item) {
+                    let paragrafo = document.createElement("p");
+                    paragrafo.textContent = item;
+                    sezione.appendChild(paragrafo);
+                });
+            } else {
                 let paragrafo = document.createElement("p");
-                paragrafo.textContent = item;
+                paragrafo.textContent = "Nessun dato disponibile.";
                 sezione.appendChild(paragrafo);
-            });
+            }
 
             return sezione;
         }
