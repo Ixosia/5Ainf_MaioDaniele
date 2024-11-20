@@ -45,16 +45,15 @@
             intestazione.appendChild(immagine);
 
             let nominativo = document.createElement("h1");
-            nominativo.textContent = `${ogg.DatiPersonali.Nome} ${ogg.DatiPersonali.Cognome}`;
+            nominativo.textContent = ogg.DatiPersonali.Nome + " " + ogg.DatiPersonali.Cognome;
             intestazione.appendChild(nominativo);
 
             let contatti = document.createElement("p");
-            contatti.innerHTML = `
-                <strong>Indirizzo:</strong> ${ogg.DatiPersonali.Indirizzo}<br>
-                <strong>Città:</strong> ${ogg.DatiPersonali.Città}<br>
-                <strong>Telefono:</strong> ${ogg.DatiPersonali.Telefono}<br>
-                <strong>Email:</strong> ${ogg.DatiPersonali.Email || "Non disponibile"}
-            `;
+            contatti.innerHTML = 
+                "<strong>Indirizzo:</strong> " + ogg.DatiPersonali.Indirizzo + "<br>" +
+                "<strong>Citta:</strong> " + ogg.DatiPersonali.Citta + "<br>" +
+                "<strong>Telefono:</strong> " + ogg.DatiPersonali.Telefono + "<br>" +
+                "<strong>Email:</strong> " + (ogg.DatiPersonali.Email || "Non disponibile");
             intestazione.appendChild(contatti);
 
             let sezionePresentazione = creaSezione("Presentazione", [ogg.Presentazione]);
@@ -84,7 +83,7 @@
             titoloSezione.textContent = titolo;
             sezione.appendChild(titoloSezione);
 
-            contenuto.forEach(item => {
+            contenuto.forEach(function(item) {
                 let paragrafo = document.createElement("p");
                 paragrafo.textContent = item;
                 sezione.appendChild(paragrafo);
