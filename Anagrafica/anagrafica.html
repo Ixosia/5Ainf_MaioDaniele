@@ -72,11 +72,15 @@
             const cellaTelefono2 = creaCella(persona.telefono[1]?.numero || "Non disponibile");
 
             const cellaPortfolio = document.createElement("td");
-            const linkPortfolio = document.createElement("a");
-            linkPortfolio.href = `portfolio.html?utente=${i}`;
-            linkPortfolio.textContent = "Portfolio";
-            cellaPortfolio.appendChild(linkPortfolio);
-
+            const imgPortfolio = document.createElement("img");
+            imgPortfolio.src = persona.portfolioImg;
+            imgPortfolio.alt = `Portfolio di ${persona.nome}`;
+            imgPortfolio.classList.add("immagineProfilo");
+            imgPortfolio.addEventListener("click", () => {
+                window.location.href = `portfolio.html?utente=${i}`;
+            });
+            cellaPortfolio.appendChild(imgPortfolio);
+            
             riga.appendChild(cellaImg);
             riga.appendChild(cellaNome);
             riga.appendChild(cellaCognome);
@@ -85,6 +89,7 @@
             riga.appendChild(cellaCitta);
             riga.appendChild(cellaTelefono1);
             riga.appendChild(cellaTelefono2);
+            riga.appendChild(cellaPortfolio);
             riga.appendChild(cellaPortfolio);
 
             tabella.appendChild(riga);
