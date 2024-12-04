@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portfolios>
+    <utente id="0">
+        <lavoro>
+            <titolo>Sistema di Gestione Clienti</titolo>
+            <abstract>Un'applicazione per la gestione dei dati dei clienti aziendali.</abstract>
+            <link>https://example.com/progettoGestioneClienti</link>
+        </lavoro>
+        <lavoro>
+            <titolo>Dashboard di Analisi Vendite</titolo>
+            <abstract>Una piattaforma interattiva per monitorare le vendite in tempo reale.</abstract>
+            <link>https://example.com/analisiVendite</link>
+        </lavoro>
+    </utente>
+    <utente id="1">
+        <lavoro>
+            <titolo>App per il Fitness</titolo>
+            <abstract>Un'app mobile per il monitoraggio degli allenamenti e della nutrizione.</abstract>
+            <link>https://example.com/appFitness</link>
+        </lavoro>
+        <lavoro>
+            <titolo>Piattaforma di Social Networking</titolo>
+            <abstract>Un social network per professionisti del settore tecnologico.</abstract>
+            <link>https://example.com/socialTech</link>
+        </lavoro>
+    </utente>
+    <utente id="2">
+        <lavoro>
+            <titolo>Tool di Traduzione Automatica</titolo>
+            <abstract>Uno strumento basato sull'intelligenza artificiale per traduzioni multilingue.</abstract>
+            <link>https://example.com/traduttoreAI</link>
+        </lavoro>
+        <lavoro>
+            <titolo>Sistema di Gestione Progetti</titolo>
+            <abstract>Una piattaforma per la pianificazione e il monitoraggio dei progetti aziendali.</abstract>
+            <link>https://example.com/gestioneProgetti</link>
+        </lavoro>
+        <lavoro>
+            <titolo>Piattaforma di E-Commerce</titolo>
+            <abstract>Un sito web completo per la vendita di prodotti online.</abstract>
+            <link>https://example.com/eCommerce</link>
+        </lavoro>
+    </utente>
+</portfolios>
