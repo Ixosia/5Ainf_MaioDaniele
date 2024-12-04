@@ -2,43 +2,45 @@
 <portfolios>
     <utente id="0">
         <lavoro>
-            <titolo>Sistema di Gestione Clienti</titolo>
-            <abstract>Un'applicazione per la gestione dei dati dei clienti aziendali.</abstract>
-            <link>https://example.com/progettoGestioneClienti</link>
+            <titolo>Gestione Inventario</titolo>
+            <abstract>Un'applicazione per monitorare e gestire l'inventario aziendale in tempo reale.</abstract>
+            <link>https://example.com/gestioneInventario</link>
         </lavoro>
         <lavoro>
-            <titolo>Dashboard di Analisi Vendite</titolo>
-            <abstract>Una piattaforma interattiva per monitorare le vendite in tempo reale.</abstract>
-            <link>https://example.com/analisiVendite</link>
+            <titolo>Piattaforma di Prenotazioni</titolo>
+            <abstract>Un sistema avanzato per la prenotazione di servizi e appuntamenti.</abstract>
+            <link>https://example.com/prenotazioni</link>
         </lavoro>
     </utente>
+    
     <utente id="1">
         <lavoro>
-            <titolo>App per il Fitness</titolo>
-            <abstract>Un'app mobile per il monitoraggio degli allenamenti e della nutrizione.</abstract>
-            <link>https://example.com/appFitness</link>
+            <titolo>App di Viaggio</titolo>
+            <abstract>Un'app mobile per la pianificazione di itinerari di viaggio e prenotazioni.</abstract>
+            <link>https://example.com/appViaggio</link>
         </lavoro>
         <lavoro>
-            <titolo>Piattaforma di Social Networking</titolo>
-            <abstract>Un social network per professionisti del settore tecnologico.</abstract>
-            <link>https://example.com/socialTech</link>
+            <titolo>Piattaforma per Corsi Online</titolo>
+            <abstract>Una piattaforma educativa per la creazione e gestione di corsi online.</abstract>
+            <link>https://example.com/corsiOnline</link>
         </lavoro>
     </utente>
+    
     <utente id="2">
         <lavoro>
-            <titolo>Tool di Traduzione Automatica</titolo>
-            <abstract>Uno strumento basato sull'intelligenza artificiale per traduzioni multilingue.</abstract>
-            <link>https://example.com/traduttoreAI</link>
+            <titolo>Software di Analisi dei Dati</titolo>
+            <abstract>Un software per analizzare grandi quantità di dati e generare report dettagliati.</abstract>
+            <link>https://example.com/analisiDati</link>
         </lavoro>
         <lavoro>
-            <titolo>Sistema di Gestione Progetti</titolo>
-            <abstract>Una piattaforma per la pianificazione e il monitoraggio dei progetti aziendali.</abstract>
-            <link>https://example.com/gestioneProgetti</link>
+            <titolo>Sistema di Gestione Documentale</titolo>
+            <abstract>Una soluzione digitale per l'archiviazione e la gestione dei documenti aziendali.</abstract>
+            <link>https://example.com/gestioneDocumenti</link>
         </lavoro>
         <lavoro>
-            <titolo>Piattaforma di E-Commerce</titolo>
-            <abstract>Un sito web completo per la vendita di prodotti online.</abstract>
-            <link>https://example.com/eCommerce</link>
+            <titolo>Piattaforma per Eventi Virtuali</titolo>
+            <abstract>Una piattaforma per organizzare e gestire eventi virtuali su larga scala.</abstract>
+            <link>https://example.com/eventiVirtuali</link>
         </lavoro>
     </utente>
 </portfolios>
