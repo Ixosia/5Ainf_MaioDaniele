@@ -43,7 +43,7 @@
             document.getElementById("portfolio").textContent = "Nessun utente selezionato.";
         } else {
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", `Port_${utenteId}.xml`, true);  // Corretto: rimosso backtick extra
+            xhr.open("GET", `Port${utenteId}.xml`, true);  // Corretto: rimosso backtick extra
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     const xmlDoc = xhr.responseXML;
