@@ -43,7 +43,7 @@
     <service name="Converti_service">
         <documentation>Server SOAP per la conversione valutaria</documentation>
         <port binding="tns:Converti_Binding" name="Converti_Port">
-            <soap:address location="http://127.0.0.1/Convertitore/server/"/>
+            <soap:address location="https://raw.githubusercontent.com/Ixosia/5Ainf_MaioDaniele/refs/heads/main/Soap/Server/test.wsdl"/>
         </port>
     </service>
 </definitions>
